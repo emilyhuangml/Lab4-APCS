@@ -1,21 +1,16 @@
 #Largest Palindrome Product 
-for i in range (100, 1000):
-    print(i)
-for e in [x for x in range (100, 1000) if x != i]:
-    print(e)
-for j in [y for y in range (100, 1000) if y != i and y != e]:
-    print(j)
-def find_pal(number):
-    if number == number[::-1]:
-        print('Yes')
-    else:
-        print('No')
-    
+num_list = []
+def find_pal():
+    for i in range (100, 1000):
+        for e in range (100, 1000):
+            number = str(i*e)
+            if number == number[::-1]:
+                num_list.append(number)
+                num_list.sort()
+    print(num_list[-1])
+       
+print(find_pal())
 
-if __name__ == "__main__":
-    if find_pal(i*e*j) == 'Yes':
-        print(i)
-        print(e)
-        print(j)
+       
 
    
